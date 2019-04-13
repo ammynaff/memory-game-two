@@ -27,8 +27,8 @@ function shuffle(array) {
 }
 
 const deck = document.querySelector('.deck');
-
-deck.addEventListener('click', event => {
+//set up an eventlistener to toggle cards
+deck.addEventListener('click', function(event) {
     const clickTarget = event.target;
     if (clickTarget.classList.contains('card')) {
         clickTarget.classList.toggle('open');
