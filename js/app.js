@@ -27,14 +27,25 @@ function shuffle(array) {
 }
 
 const deck = document.querySelector('.deck');
-//set up an eventlistener to toggle cards
+let toggledCards = [];
+//set up an eventlistener to listen for click and toggle cards
 deck.addEventListener('click', function(event) {
     const clickTarget = event.target;
     if (clickTarget.classList.contains('card')) {
-        clickTarget.classList.toggle('open');
-        clickTarget.classList.toggle('show');
+        toggleCard(clickTarget);
+        addToggleCard(clickTarget);
     }
 });
+
+function toggleCard(clickTarget) {
+    clickTarget.classList.toggle('open');
+    clickTarget.classList.toggle('show');
+}
+
+function addToggleCard(clickTarget) {
+    toggledCards.push(clickTarget);
+    console.log(toggledCards);
+}
 
 
 
